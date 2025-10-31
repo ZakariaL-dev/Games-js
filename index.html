@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Number Guessing Game -->
+    <div class="numberguesser">
+      <h1 style="margin-bottom: 20px">
+        <i class="fa-solid fa-gamepad"></i> Number Guessing Game
+      </h1>
+      <h4 id="phrase" style="margin-bottom: 10px">
+        I'm thinking of a number between 1 and 100. Can you guess it?
+      </h4>
+      <p>Attempts: <span id="attemptsnumb">0</span></p>
+      <div class="inputs">
+        <input
+          type="number"
+          id="numberinp"
+          min="1"
+          max="100"
+          placeholder="Enter Your Guess (1-100)"
+        />
+        <button id="guessbtn">
+          <i class="fa-solid fa-brain"></i>
+          Guess
+        </button>
+      </div>
+      <button id="hintbtn">
+        <i class="fa-solid fa-lightbulb"></i>
+        Get Hint
+      </button>
+      <div id="displayguesses" style="text-align: left; display: none">
+        <h3 style="margin-bottom: 12px">Your Guesses:</h3>
+        <div id="guesses" class="guesses"></div>
+      </div>
+      <button id="newgamebtn">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        New Game
+      </button>
+    </div>
+
+    <!-- Whack-a-Mole -->
+    <div class="wackamole">
+      <h1>
+        <i class="fa-solid fa-gavel"></i>
+        Whack-a-Mole
+        <i class="fa-solid fa-gavel"></i>
+      </h1>
+
+      <div class="scores">
+        <div>
+          <h3 id="score">0</h3>
+          <p>Score</p>
+        </div>
+        <div>
+          <h3 id="timer">30</h3>
+          <p>Time in seconds</p>
+        </div>
+        <div>
+          <h3 id="hits">0</h3>
+          <p>Hits</p>
+        </div>
+      </div>
+
+      <div class="moles">
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="moleback">
+          <div class="mole">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+      </div>
+      <div class="molebtns">
+        <button id="startmolebtn">Start Game</button>
+        <button id="running">Game is running...</button>
+        <button id="resetbtn">Reset</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <!-- Tic-Tac-Toe -->
+    <div class="tictactoe">
+      <h1>
+        <i class="fa-solid fa-users"></i>
+        Tic-Tac-Toe
+      </h1>
+      <h3 id="playerdisplay">Player <span id="xo">X</span>'s turn</h3>
+
+      <div class="scorsXO">
+        <div class="X">
+          <h2 style="color: rgb(0, 42, 255); margin-bottom: 10px">X</h2>
+          <p id="Xscr">0</p>
+        </div>
+
+        <div class="gamesXO" style="margin-top: -10px">
+          <h2 style="color: goldenrod; margin-bottom: 10px">
+            <i class="fa-solid fa-trophy"></i>
+          </h2>
+          <p>Game: <span id="gmXO">1</span></p>
+        </div>
+
+        <div class="O">
+          <h2 style="color: brown; margin-bottom: 10px">O</h2>
+          <p id="Oscr">0</p>
+        </div>
+      </div>
+
+      <div class="cubes">
+        <div class="cube" id="c1" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c2" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c3" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c4" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c5" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c6" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c7" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c8" onclick="gameXO(this.id)"></div>
+        <div class="cube" id="c9" onclick="gameXO(this.id)"></div>
+      </div>
+
+      <div class="XObtns">
+        <button id="newgameXO">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          New Game
+        </button>
+        <button id="resetXO">Reset Scores</button>
+      </div>
+
+      <div id="resultXO" style="display: none">
+        <h1>🎉</h1>
+        <h3>Congratulations!</h3>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
